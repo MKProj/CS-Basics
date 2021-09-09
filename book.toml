@@ -1,13 +1,13 @@
 [book]
-title="Title"
-author="Author"
+title="C# Basics"
+author="Mustafif Khan"
 [output.html]
 preferred-dark-theme = "ayu"
 default-theme = "ayu"
-git-repository-url = "repo-link"
+git-repository-url = "https://github.com/MKProj/CS-Basics.git"
 git-repository-icon = "fa-github"
 copy-fonts = true
-no-section-label = true
+no-section-label = false
 mathjax-support = true
 
 [output.html.search]

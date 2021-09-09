@@ -1,3 +1,10 @@
 # Summary
-
-- [Chapter 1](./chapter_1.md)
+- [Introduction](01-intro.md)
+- [Data Types & Variables](02-var.md)
+- [Conditionals](03-cond.md)
+- [Methods](04-methods.md)
+- [Arrays & Loops](05-loop.md)
+- [Classes & Objects](06-classes.md)
+- [Interfaces & Inheritance](07-interface.md)
+- [References](08-ref.md)
+- [Lists & Linq](09-lists.md)
