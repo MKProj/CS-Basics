@@ -260,22 +260,70 @@ For those coming from other languages will probably answer, well <code>if/else</
 <li>
 <p><code>&lt;=</code> :  Less than or equal operator, it will check if Left is less than or equal to Right</p>
 </li>
-<li>
-<p>talk about if</p>
-</li>
-<li>
-<p>talk about else if </p>
-</li>
-<li>
-<p>talk about else</p>
-</li>
-<li>
-<p>talk about switch and break statements</p>
-</li>
-<li>
-<p>talk about ternary operator </p>
-</li>
 </ul>
+<h2 id="ifelse-statements"><a class="header" href="#ifelse-statements">If/Else Statements</a></h2>
+<p>An <code>if</code> statement executes a block of code if the condition met is true, an <code>else</code> statement
+executes a block of code if the condition met is false. To see this more in action, let's look
+at a simple example: </p>
+<pre><code class="language-C#">if(5 &gt; 6)
+{
+    Console.WriteLine(&quot;This is true&quot;);
+} else 
+{
+    Console.WriteLine(&quot;This is false&quot;);
+}
+</code></pre>
+<p>If we run this, we would get the result of <code>This is false!</code>, 5 is not greater than 6! However what if we also wanted to check if 5 is greater 
+than 4? Would we have to add another if statement? Of course not, we would instead add an <code>else if</code> statement, which is executed if the condition
+is true. Let's update our little program here then, </p>
+<pre><code class="language-C#">if(5 &gt; 6)
+{
+    Console.WriteLine(&quot;This is true!&quot;);
+} else if(5 &gt; 4)
+{
+    Console.WriteLine(&quot;This is also true!&quot;);
+} else 
+{
+    Console.WriteLine(&quot;This is false!&quot;);
+}
+</code></pre>
+<p>Now if we run this, we would get the result of <code>This is also true!</code>, as 5 is indeed greater than 4. </p>
+<h2 id="switch-statements"><a class="header" href="#switch-statements">Switch Statements</a></h2>
+<p>Now <code>if/else</code> statement tend to get really messy when you have many different conditions you're checking, so 
+you may also use a <code>switch</code> statement which is similar to how C uses it. Switch statement can make your 
+code look more readable as long as you know what cases you'd like to handle. Another thing you must use 
+with switch statments is the <code>break</code> statement that will exit the switch statement once the condition is met, and 
+it's block of code is executed. </p>
+<p>In this example we will be checking for (may be a bit nerdy) preferred GPU Manufacturer: </p>
+<pre><code class="language-C#">//Intel is by the way bringing a new gpu 
+string pref_gpu = &quot;AMD&quot;;
+
+switch(pref_gpu){
+    //to handle a case, use case &lt;condition&gt;: 
+    case &quot;AMD&quot; : 
+        Console.WriteLine(&quot;Welcome Team Red!&quot;);
+        break;
+    case &quot;Intel&quot; : 
+        Console.WriteLine(&quot;Coming soon...Team Blue&quot;);
+        break;
+    case &quot;Nvidia&quot;:
+        Console.WriteLine(&quot;Welcome Team Green!&quot;);
+        break;
+}
+</code></pre>
+<p>If we run this program, we would be greeted with <code>Welcome to Team Red!</code>, with funny enough 
+hypocrisy as I run all Intel hardware (for now!). </p>
+<h2 id="ternary-operator"><a class="header" href="#ternary-operator">Ternary Operator</a></h2>
+<p>All the options we have are great and all, but let's say we want to do an if/else statement in one line? How would we do that?
+We could use the ternary operator, however note that this is only useful when a variable's value depends on different conditions!</p>
+<ul>
+<li>The ternary operator works as the following: <code>&lt;condition&gt; ? &lt;true&gt; : &lt;false&gt;;</code></li>
+</ul>
+<p>Let's see a simple example deciding what to do when I'm hungry. </p>
+<pre><code class="language-C#">bool imHungry = true;
+
+string what_to_do = imHungry ? &quot;Go to McDonald's&quot; : &quot;Go Home and sleep&quot;;
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="methods"><a class="header" href="#methods">Methods</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="arrays--loops"><a class="header" href="#arrays--loops">Arrays &amp; Loops</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="classes--objects"><a class="header" href="#classes--objects">Classes &amp; Objects</a></h1>
