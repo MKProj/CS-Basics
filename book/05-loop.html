@@ -140,6 +140,114 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="arrays--loops"><a class="header" href="#arrays--loops">Arrays &amp; Loops</a></h1>
+<p>In this section we will first talk about Arrays and then Loops. Before we talk about declaring 
+and initializing arrays, what is an array? Well the simplest explanation is: <em>A collection of a data</em>, and 
+like other languages an array is a collection of data of a <strong>single</strong> data type. </p>
+<h3 id="declaring-arrays"><a class="header" href="#declaring-arrays">Declaring Arrays</a></h3>
+<p>To declare an array, we follow the general syntax of <code>&lt;data_type&gt;[] name = new &lt;data_type&gt;[];</code>. 
+We can decide to create an empty array, a specified length, or declare &amp; initialize. To explain this better,
+why don't we show all of these types in code: </p>
+<pre><code class="language-C#">//New empty array
+int[] numbers = new int[]; 
+
+//New array with a length of 10
+int[] numbers = new int[10];
+
+//New array initialized 
+int[] numbers = new int[]{12,34,5,7,9};
+</code></pre>
+<h3 id="accessing-elements-in-arrays"><a class="header" href="#accessing-elements-in-arrays">Accessing Elements in Arrays</a></h3>
+<p>The data inside an array are referred to as elements, and to access them we need to specify
+their index. In collections for all languages, the index starts at 0, and goes forward from there. </p>
+<pre><code class="language-C#">//Let's revisit our numbers array 
+int[] numbers = new int[]{12,34,5,7,9};
+
+Console.WriteLine($&quot;The index of 0 has value: {numbers[0]}&quot;)
+//Prints 12
+Console.WriteLine($&quot;The index of 2 has value: {numbers[2]}&quot;)
+//Prints 5
+</code></pre>
+<p>We will talk about loops next, and how it extends our use with arrays. </p>
+<h2 id="while-loops"><a class="header" href="#while-loops">While Loops</a></h2>
+<p>While loops executed a block of code repeatedly until it's condition is false, and this can be used
+to iterate through an array, printing a pattern, etc. To show this better let's show a simple loop 
+that prints all the array's element: </p>
+<pre><code class="language-C#">int i = 0; //Counter 
+int[] numbers = new int[]{89,45,6,8,12};
+// while(condition){}
+//This will loop until i is greater than the array's length
+while(i &lt; numbers.Length)
+{
+    Console.WriteLine(&quot;The index {0} has element {1}&quot;, i, numbers[i]);
+    //formatted string {index}
+    i++; 
+    //Increases i by 1
+}
+</code></pre>
+<p>A warning of while loops are infinite loops, and this is when the condition is always true, 
+such that <code>while(true)</code> will cause the application, or even in one case for me, my whole computer crashed. 
+They should not be taken lightly, and should be avoided in usage. </p>
+<h3 id="do-while-loops"><a class="header" href="#do-while-loops">Do-While loops</a></h3>
+<p>A do-while loop is a loop where the block of code will at least execute once even if the condition is false. </p>
+<pre><code class="language-C#">int i = 0;
+do{
+    Console.WriteLine(&quot;{0}&quot;, i);
+    i++;
+} while(i &lt; 5);
+
+//This is the same as:
+int i = 0;
+Console.WriteLine(&quot;{0}&quot;, i);
+i++;
+while(i &lt; 5)
+{
+    Console.WriteLine(&quot;{0}&quot;, i)
+    i++;
+}
+</code></pre>
+<p>This is useful when you want the code to at least execute once, and as 
+you can see from the example, it also reduces the code repetition quite a bit.</p>
+<h2 id="for-loops"><a class="header" href="#for-loops">For Loops</a></h2>
+<p>A for loop is usually the preferred way of iterating through arrays, or 
+using loops in general. The for loop has three parameters: </p>
+<ul>
+<li><code>for(int i = 0; i &lt; &lt;number&gt;; i++)</code>
+<ul>
+<li><code>int i = 0</code> : This is the counter initilization</li>
+<li><code>i &lt; &lt;number&gt;</code> : This is the stopping condition</li>
+<li><code>i++</code> : This is the iteration statement</li>
+</ul>
+</li>
+</ul>
+<p>To see this better, let's rewrite our iteration loop but instead of 
+a while loop, let's use a for loop.</p>
+<pre><code class="language-C#">int[] numbers = new int[]{78, 56, 4,32,1};
+
+for(int i = 0; i &lt; numbers.Length; i++)
+{
+    Console.WriteLine(&quot;The index {0} has element {1}&quot;, i, numbers[i]);
+}
+
+</code></pre>
+<p>Doesn't that look a lot better! Well we can step this up by using a simpler
+version of a for loop called a foreach loop. </p>
+<h3 id="foreach-loop"><a class="header" href="#foreach-loop">ForEach Loop</a></h3>
+<p>In languages like Python &amp; Rust, a foreach loop is the default for loop, and what they
+all have in common is by using ranges. This is done by using the <code>in</code> keyword, and we can
+see it being used in the example below:</p>
+<pre><code class="language-C#">int[] numbers = new int[]{12,34,5,6,8};
+
+// foreach(&lt;element&gt; in &lt;array&gt;)
+foreach(int num in numbers)
+{
+    Console.WriteLine(&quot;The element is {0}&quot;, num);
+}
+</code></pre>
+<!--
+
+- jump statements 
+
+-->
 
                     </main>
 

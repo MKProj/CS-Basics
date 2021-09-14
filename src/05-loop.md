@@ -35,13 +35,96 @@ Console.WriteLine($"The index of 2 has value: {numbers[2]}")
 ```
 We will talk about loops next, and how it extends our use with arrays. 
 
-<!--
-- while loops
-    - infinite loops
-- do while loops
 
-- for loops
-- foreach loops
+## While Loops 
+While loops executed a block of code repeatedly until it's condition is false, and this can be used
+to iterate through an array, printing a pattern, etc. To show this better let's show a simple loop 
+that prints all the array's element: 
+
+```C#
+int i = 0; //Counter 
+int[] numbers = new int[]{89,45,6,8,12};
+// while(condition){}
+//This will loop until i is greater than the array's length
+while(i < numbers.Length)
+{
+    Console.WriteLine("The index {0} has element {1}", i, numbers[i]);
+    //formatted string {index}
+    i++; 
+    //Increases i by 1
+}
+```
+
+A warning of while loops are infinite loops, and this is when the condition is always true, 
+such that `while(true)` will cause the application, or even in one case for me, my whole computer crashed. 
+They should not be taken lightly, and should be avoided in usage. 
+
+### Do-While loops 
+A do-while loop is a loop where the block of code will at least execute once even if the condition is false. 
+```C#
+int i = 0;
+do{
+    Console.WriteLine("{0}", i);
+    i++;
+} while(i < 5);
+
+//This is the same as:
+int i = 0;
+Console.WriteLine("{0}", i);
+i++;
+while(i < 5)
+{
+    Console.WriteLine("{0}", i)
+    i++;
+}
+```
+This is useful when you want the code to at least execute once, and as 
+you can see from the example, it also reduces the code repetition quite a bit.
+
+
+## For Loops 
+A for loop is usually the preferred way of iterating through arrays, or 
+using loops in general. The for loop has three parameters: 
+- `for(int i = 0; i < <number>; i++)`
+    - `int i = 0` : This is the counter initilization
+    - `i < <number>` : This is the stopping condition
+    - `i++` : This is the iteration statement
+
+To see this better, let's rewrite our iteration loop but instead of 
+a while loop, let's use a for loop.
+
+```C#
+int[] numbers = new int[]{78, 56, 4,32,1};
+
+for(int i = 0; i < numbers.Length; i++)
+{
+    Console.WriteLine("The index {0} has element {1}", i, numbers[i]);
+}
+
+```
+Doesn't that look a lot better! Well we can step this up by using a simpler
+version of a for loop called a foreach loop. 
+
+### ForEach Loop 
+In languages like Python & Rust, a foreach loop is the default for loop, and what they
+all have in common is by using ranges. This is done by using the `in` keyword, and we can
+see it being used in the example below:
+
+```C#
+int[] numbers = new int[]{12,34,5,6,8};
+
+// foreach(<element> in <array>)
+foreach(int num in numbers)
+{
+    Console.WriteLine("The element is {0}", num);
+}
+```
+
+
+
+
+
+<!--
 
 - jump statements 
 
