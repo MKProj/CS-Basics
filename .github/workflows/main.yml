@@ -7,9 +7,15 @@ jobs:
   deploy-to-gh-pages: 
     runs-on: ubuntu-latest
     steps: 
-    - name: Commit book to Gh-Pages
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-      with:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        BRANCH: gh-pages
-        FOLDER: book
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - run: cargo install mdbook
+      - run: mdbook build
+      - name: Commit book to Gh-Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          BRANCH: gh-pages
+          FOLDER: book
