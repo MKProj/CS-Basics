@@ -1,0 +1,16 @@
+name: Deploy to Gh-Pages
+
+on: 
+  push: 
+    branches: [main]
+jobs: 
+  deploy-to-gh-pages: 
+    runs-on: ubuntu-latest
+    steps: 
+    
+    - name: Commit book to Gh-Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with: 
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        BRANCH: gh-pages
+        FOLDER: book/
