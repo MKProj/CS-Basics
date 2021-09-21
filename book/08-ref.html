@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Data Types &amp; Variables - C# Basics</title>
+        <title>References - C# Basics</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -77,7 +77,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="01-intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="02-var.html" class="active"><strong aria-hidden="true">2.</strong> Data Types &amp; Variables</a></li><li class="chapter-item expanded "><a href="03-cond.html"><strong aria-hidden="true">3.</strong> Conditionals</a></li><li class="chapter-item expanded "><a href="04-methods.html"><strong aria-hidden="true">4.</strong> Methods</a></li><li class="chapter-item expanded "><a href="05-loop.html"><strong aria-hidden="true">5.</strong> Arrays &amp; Loops</a></li><li class="chapter-item expanded "><a href="06-classes.html"><strong aria-hidden="true">6.</strong> Classes &amp; Objects</a></li><li class="chapter-item expanded "><a href="07-interface.html"><strong aria-hidden="true">7.</strong> Interfaces &amp; Inheritance</a></li><li class="chapter-item expanded "><a href="08-ref.html"><strong aria-hidden="true">8.</strong> References</a></li><li class="chapter-item expanded "><a href="09-lists.html"><strong aria-hidden="true">9.</strong> Lists &amp; Linq</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01-intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="02-var.html"><strong aria-hidden="true">2.</strong> Data Types &amp; Variables</a></li><li class="chapter-item expanded "><a href="03-cond.html"><strong aria-hidden="true">3.</strong> Conditionals</a></li><li class="chapter-item expanded "><a href="04-methods.html"><strong aria-hidden="true">4.</strong> Methods</a></li><li class="chapter-item expanded "><a href="05-loop.html"><strong aria-hidden="true">5.</strong> Arrays &amp; Loops</a></li><li class="chapter-item expanded "><a href="06-classes.html"><strong aria-hidden="true">6.</strong> Classes &amp; Objects</a></li><li class="chapter-item expanded "><a href="07-interface.html"><strong aria-hidden="true">7.</strong> Interfaces &amp; Inheritance</a></li><li class="chapter-item expanded "><a href="08-ref.html" class="active"><strong aria-hidden="true">8.</strong> References</a></li><li class="chapter-item expanded "><a href="09-lists.html"><strong aria-hidden="true">9.</strong> Lists &amp; Linq</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -139,75 +139,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="data-types--variables"><a class="header" href="#data-types--variables">Data Types &amp; Variables</a></h1>
-<p>Just like other languages such as Java, C++, C, you must declare the data type before the variable name. 
-In C# we have these common data type: </p>
-<ul>
-<li><code>string</code> : A collection of characters </li>
-<li><code>char</code> : A single character </li>
-<li><code>int</code> : A signed integer</li>
-<li><code>double</code> : A double point float number (decimal number)</li>
-<li><code>bool</code> : Either true or false </li>
-</ul>
-<p>We can declare each of these data types like the following: </p>
-<pre><code class="language-C#">string str = &quot;Hello World&quot;;
-char c = &quot;c&quot;;
-int i = 12;
-double d = 43.56;
-bool b = false;
-</code></pre>
-<p>Notice that when initializing variables, we first declare the data type (such as <code>int</code>), 
-following a name (<code>i</code> in this example), then it follows an assignment operator (<code>=</code>) with 
-a value corresponding to the type.</p>
-<p>If we do not know the value of the variable immediately, then we may leave it uninitialized such as 
-<code>string str;</code>. Since we know the basics of variables, let's use it to our advantage. </p>
-<h2 id="lets-find-the-character"><a class="header" href="#lets-find-the-character">Let's find the character!!!</a></h2>
-<p>This is a simple program that will take a string from the user, and we will try to find the location 
-of a character (<code>w</code> for our example) and print that out. </p>
-<pre><code class="language-C#">using System;
-public class Program{
-    static void Main(){
-        Console.WriteLine(&quot;Enter phrase: &quot;);
-        // To read input, use Console.ReadLine
-        string input = Console.ReadLine();
-        // Finds the index of a character w
-        int index = input.IndexOf('w');
-        Console.WriteLine($&quot;The index of w in {input} is {index}&quot;);
-    }
-}
-</code></pre>
-<pre><code class="language-PowerShell">&gt; csc main.cs
-&gt; ./main.exe 
-Enter phrase:
-winner
-The index of w in winner is 0
-</code></pre>
-<h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
-<p>The last thing to talk about is comments, in C# we have two type of comments, 
-single line (<code>//</code>) and multi-line (<code>/* */</code>). Comments can be used a temporary 
-way to debug or to document your code, as can be seen in the example above, it is 
-always important to try and document your code. </p>
-<p>Comments are useful to use when you're coding so you don't forget what that random 
-variable is, and it's always ignored by the compiler. </p>
-<pre><code class="language-C#">// This is used to talk in one line
-
-/*
-
-This is used to 
-talk in multiple lines
-
-yap yap yap
-*/
-</code></pre>
+                        <h1 id="references"><a class="header" href="#references">References</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="01-intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="07-interface.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="03-cond.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="09-lists.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -216,10 +157,10 @@ yap yap yap
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="01-intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="07-interface.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="03-cond.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="09-lists.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

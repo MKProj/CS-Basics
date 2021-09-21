@@ -121,12 +121,35 @@ foreach(int num in numbers)
 ```
 
 
+## Jump Statements 
+Jump statements are useful statements used to give the programmer additional control over the control flow in the program. 
+They are very commonly used in the context of loops to exit from the loop, or to skip parts of the loop.
 
+Control flow keywords include `break`, `continue`, and `return`. The example below shows the keywords in practice: 
 
+```C#
+while (true) {
+  Console.WriteLine("I only execute once");
+  // A break statement immediately terminates the loop that contains it.
+  break;
+}
+ 
+for (int i = 1; i <= 20; i++) {
+  // This prints every number from 1 to 20 except for 10 & 20.
+  if (i == 10 || i == 20) {
+    // A continue statement skips the rest of the loop and starts another iteration from the start.
+    continue;
+  }
+  Console.WriteLine(i);
+}
+ 
+static int WeirdReturnOne() {
+  while (true) {
+    // Since the return statement exits the method, the loop is also terminated.
+    // Control returns to the method's caller.
+    return 1;
+  }
+}
+```
 
-<!--
-
-- jump statements 
-
--->
 
